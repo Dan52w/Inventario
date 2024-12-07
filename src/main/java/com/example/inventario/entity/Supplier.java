@@ -6,6 +6,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Table(name = "Suppliers")
 @Entity
 @Setter
@@ -25,6 +28,11 @@ public class Supplier {
     private int phone;
     @Column(nullable = false)
     private String email;
+    @Column(nullable = false)
+    private Long identification;
 
     private String city;
+
+    @OneToMany(mappedBy = "supplier", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Shop> purchases = new ArrayList<>();
 }
