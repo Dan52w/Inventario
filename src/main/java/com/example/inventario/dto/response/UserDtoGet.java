@@ -1,5 +1,6 @@
 package com.example.inventario.dto.response;
 
+import java.util.List;
 import java.util.Set;
 
 public record UserDtoGet(Long id,
@@ -7,5 +8,6 @@ public record UserDtoGet(Long id,
                          String name,
                          Integer phone,
                          String address,
-                         Set<String> roles) {
+                         Set<String> roles,
+                         List<SaleDtoGet> sales) {
 }

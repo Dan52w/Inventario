@@ -3,8 +3,8 @@ package com.example.inventario.dto.response;
 import java.time.LocalDateTime;
 
 public record ShopDtoGet(Long id,
-                         String productName,
-                         String supplierName,
+                         String productBarCode,
+                         String supplierIdentification,
                          String username,
                          Integer quantity,
                          Double pricePerUnit,

@@ -19,7 +19,7 @@ public class Product {
 
     @Column(nullable = false)
     private String name;
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String barCode;
     @Column(nullable = false)
     private String description;

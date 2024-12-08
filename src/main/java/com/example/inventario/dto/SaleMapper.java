@@ -19,7 +19,6 @@ public interface SaleMapper {
 
     // Convierte Sale a SaleDtoGet (incluye los detalles y datos del usuario)
     @Mapping(source = "user.username", target = "username")
-    @Mapping(source = "user.name", target = "userName")
     @Mapping(source = "detailedSales", target = "detailedSales")
     SaleDtoGet toDtoGet(Sale sale);
 
