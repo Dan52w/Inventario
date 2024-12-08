@@ -5,15 +5,17 @@ import com.example.inventario.dto.response.SupplierDtoGet;
 import com.example.inventario.entity.Product;
 import com.example.inventario.entity.Shop;
 import com.example.inventario.entity.Supplier;
+import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Named;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
+@Mapper(componentModel = "spring")
 public interface SupplierMapper {
 
     @Mapping(source = "id", target = "id", ignore = true)
+    @Mapping(target = "purchases", ignore = true)
     Supplier toEntity(SupplierDto supplierDto);
 
     SupplierDto toDto(Supplier supplier);

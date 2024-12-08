@@ -6,12 +6,14 @@ import com.example.inventario.entity.ERole;
 import com.example.inventario.entity.Role;
 import com.example.inventario.entity.User;
 
+import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Named;
 
 import java.util.Set;
 import java.util.stream.Collectors;
 
+@Mapper(componentModel = "spring")
 public interface UserMapper {
     // Convertir User a UserDtoGet
     @Mapping(source = "roles", target = "roles", qualifiedByName = "rolesToStringSet")
