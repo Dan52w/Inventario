@@ -11,7 +11,6 @@ public interface SaleService {
     SaleDto save(SaleDto saleDto);
     Optional<SaleDtoGet> findById(Long id);
     Optional<SaleDtoGet> findByuserUsername(String username);
-    Optional<SaleDto> uptdate(Long id, SaleDto saleDto);
     List<SaleDtoGet> findByDate(String date);
     List<SaleDtoGet> findByDateBetween(String date1, String date2);
     List<SaleDtoGet> getAllSales();

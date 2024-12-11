@@ -9,6 +9,6 @@ import java.util.Optional;
 public interface DetailedSaleService {
     DetailedSaleDto save(DetailedSaleDto detailedSaleDto);
     Optional<DetailedSaleDtoGet> findDetailedSaleById(Long id);
-    Optional<DetailedSaleDto> uptdate(DetailedSaleDto detailedSaleDto);
+    Optional<DetailedSaleDto> uptdate(Long id,DetailedSaleDto detailedSaleDto);
     List<DetailedSaleDtoGet> getAllDetailedSale();
 }
