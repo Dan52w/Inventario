@@ -13,5 +13,6 @@ public interface ProductService {
     List<ProductDtoGet> findByName(String name);
     List<ProductDtoGet> findByDescription(String description);
     List<ProductDtoGet> findByPriceSellBetween(double min, double max);
+    List<ProductDtoGet> getAllProducts();
     void delete(String barcode);
 }

@@ -5,11 +5,13 @@ import com.example.inventario.dto.request.ProductDto;
 import com.example.inventario.dto.response.ProductDtoGet;
 import com.example.inventario.entity.Product;
 import com.example.inventario.repository.ProductRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class ProductServiceImpl implements ProductService {
     private ProductRepository productRepository;
     private ProductMapper productMapper;
@@ -23,6 +25,12 @@ public class ProductServiceImpl implements ProductService {
     public ProductDto save(ProductDto productDto) {
         Product product = productMapper.toEntity(productDto);
         return productMapper.toDto(productRepository.save(product));
+    }
+
+    @Override
+    public List<ProductDtoGet> getAllProducts() {
+        List<Product> products = productRepository.findAll();
+        return toListProductDtoGet(products);
     }
 
     @Override

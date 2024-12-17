@@ -5,11 +5,13 @@ import com.example.inventario.dto.request.SaleDto;
 import com.example.inventario.dto.response.SaleDtoGet;
 import com.example.inventario.entity.Sale;
 import com.example.inventario.repository.SaleRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class SaleServiceImpl implements SaleService{
     private SaleRepository saleRepository;
     private SaleMapper saleMapper;
