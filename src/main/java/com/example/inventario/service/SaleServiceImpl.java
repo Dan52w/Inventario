@@ -7,6 +7,7 @@ import com.example.inventario.entity.Sale;
 import com.example.inventario.repository.SaleRepository;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -38,13 +39,13 @@ public class SaleServiceImpl implements SaleService{
     }
 
     @Override
-    public List<SaleDtoGet> findByDate(String date) {
+    public List<SaleDtoGet> findByDate(LocalDateTime date) {
         List<Sale> sales = saleRepository.findByDate(date);
         return toListSaleDtoGet(sales);
     }
 
     @Override
-    public List<SaleDtoGet> findByDateBetween(String date1, String date2) {
+    public List<SaleDtoGet> findByDateBetween(LocalDateTime date1, LocalDateTime date2) {
         List<Sale> sales = saleRepository.findByDateBetween(date1, date2);
         return toListSaleDtoGet(sales);
     }

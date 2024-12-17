@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -37,12 +38,15 @@ public class SaleController {
 
     @GetMapping("/dates/{date1}/{date2}")
     public ResponseEntity<List<SaleDtoGet>> getAllSales(@PathVariable String date1, @PathVariable String date2) {
-        return ResponseEntity.ok(saleService.findByDateBetween(date1, date2));
+        LocalDateTime localDateTime = LocalDateTime.parse(date1);
+        LocalDateTime localDateTime2 = LocalDateTime.parse(date2);
+        return ResponseEntity.ok(saleService.findByDateBetween(localDateTime, localDateTime2));
     }
 
     @GetMapping("/date/{date}")
     public ResponseEntity<List<SaleDtoGet>> getAllSales(@PathVariable String date) {
-        return ResponseEntity.ok(saleService.findByDate(date));
+        LocalDateTime localDateTime = LocalDateTime.parse(date);
+        return ResponseEntity.ok(saleService.findByDate(localDateTime));
     }
 
     @PostMapping()
